@@ -14,7 +14,7 @@ const forecast = (latitude, longitude, callback) => {
       const summary = body.daily.data[0].summary;
       const tempHigh = body.daily.data[0].temperatureHigh;
       const tempLow = body.daily.data[0].temperatureLow;
-      callback(undefined, `${summary} It is currently ${temp} degrees out. The high today will be ${tempHigh} degrees and the low will be ${tempLow} degress. There is a ${precip}% chance of rain.`);
+      callback(undefined, `${summary} It is currently ${temp} degrees out. The high today will be ${tempHigh} degrees and the low will be ${tempLow} degrees. There is a ${precip}% chance of rain.`);
     }
   });
 }
