@@ -23,21 +23,21 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather',
-    name: 'Andrew Mead'
+    name: 'Wesley Osborne'
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About Me',
-    name: 'Andrew Mead'
+    name: 'Wesley Osborne'
   });
 });
 
 app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
-    name: 'Andrew Mead',
+    name: 'Wesley Osborne',
     helpText: 'Resources to get help'
   })
 });
@@ -51,11 +51,11 @@ app.get('/weather', (req, res) => {
     });
   }
 
-  geocode(address, (error, { latitude, longitude, location} = {}) => {
+  geocode(address, (error, { latitude, longitude, location } = {}) => {
     if (error) {
       return res.send({
         error: error
-      }); 
+      });
     }
     forecast(latitude, longitude, (error, forecastData) => {
       if (error) {
@@ -75,7 +75,7 @@ app.get('/weather', (req, res) => {
 app.get('/help/*', (req, res) => {
   res.render('404', {
     title: '404',
-    name: 'Andrew Mead',
+    name: 'Wesley Osborne',
     error: 'Help article not found'
   });
 });
@@ -83,7 +83,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
   res.render('404', {
     title: '404',
-    name: 'Andrew Mead',
+    name: 'Wesley Osborne',
     error: 'Page not found',
   });
 })
